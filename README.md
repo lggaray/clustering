@@ -45,7 +45,7 @@ Se probaron dimensiones en un rango de 100 a 500.
 En un principio se intentó implementar el algoritmo __KMeans__, pero luego, al compararlo con el que ya se encuentra implementado en libreria __sklearn__, se llegó a la conclución de que la implementación realizada no era muy buena. Finalmente, para la tarea de clusterizado utilizó [KMeans](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) ya implementado.
 Se comenzó probando de a 10 clusters y así se fué avanzando hasta llegar a 40, donde los clusters que se forman tienen bastante sentido.
 
-# Output
+### Output
 A continuación presentaré algunos de los clusters formados.
 
 *Nota: El input es UNA PARTE del corpus, no es el corpus completo.*
@@ -78,7 +78,7 @@ Por último, quería mostrar este cluster ya que me pareció muy interesante. Po
 
 *Nota: Estós clusters fueron los que quedaron mejor formados luego de jugar mucho con la cantidad de dimensiones y el número de clusters*.
 
-# Conclusión
+### Conclusión
 
 Finalmente podemos observar que los clusters quedaron formados *relativamente* bien, utilizando 300 dimensiones y 40 clusters. 
 De igual forma, estos resultados podrían mejorar significativamente al agregar *triplas de dependencia* como un tipo de feature extra. 
