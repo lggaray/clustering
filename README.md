@@ -6,9 +6,11 @@ El corpus utilizado para esta tarea fue el de La Voz del Interior.
 
 ### Pipeline
 1) *Pre-procesamiento:*
+
 El pre-procesamiento del corpus fué lo más trabajoso. En primer lugar, se debe leer el archivo para ver como se encuentra organizado, y en base a eso determinar de que manera se deben tratar los textos. Teninedo esto en cuenta, se avanza con el tokenizado del texto, usando la libreria __nltk__. De esta manera, nuestro corpus ahora es una lista de oraciones. Luego, con ayuda de la libreria __re__ se utilizan *expresiones regulares* para deshacerse de caracteres no necesarios para esta tarea. Dejando una lista de oraciones limpia, lista para pasar a la siguiente etapa.
 
 2) *Diccionario de features:* 
+
 Los tipos de features utilizados fueron:
     - Lema de la palabra
     - POS tag de la palabra
@@ -27,16 +29,19 @@ Los tipos de features utilizados fueron:
 
 
 3) *Vectorización:*
+
     Para realizar esta tarea, en un primer momento se utilizó __word2vect__ de la libreria [gensim](https://radimrehurek.com/gensim/models/word2vec.html).
     Pero luego de un par de intentos de clustering, se podía observar que varios clusters carecían de sentido y los *hiperparámetros* que se podían modificar no impactaban mucho en el resultado final. Esto se debe, principalmente, a que el mismo algoritmo, de alguna forma, seleccionaba los features, es decir, no se tenía control sobre ellos.
     
     Teniendo en cuenta esto, se procedió a la utilización de la función __DictVectorizer__ de la libreria [sklearn](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html), en la cual es posible poder elegir los tipos de features que queremos que se tengan en cuenta.
     
 4) *Reducción de dimensionalidad:*
+
 Para poder reducir dimensiones utilicé __TrucatedSVD__ de la libreria [sklearn](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html). 
 Se probaron dimensiones en un rango de 100 a 500.
 
 5) *Clustering:*
+
 En un principio se intentó implementar el algoritmo __KMeans__, pero luego, al compararlo con el que ya se encuentra implementado en libreria __sklearn__, se llegó a la conclución de que la implementación realizada no era muy buena. Finalmente, para la tarea de clusterizado utilizó [KMeans](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) ya implementado.
 Se comenzó probando de a 10 clusters y así se fué avanzando hasta llegar a 40, donde los clusters que se forman tienen bastante sentido.
 
