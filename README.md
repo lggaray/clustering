@@ -54,7 +54,6 @@ A continuación presentaré algunos de los clusters formados.
 
 En este cluster podemos observar que se agrupan __entidades__ (nombres propios).
 
-*Nota: Hay varias entidades que quedan fuera del cluster*.
 
 >{'fue', 'se', 'molestan', 'vino', 'sostiene', 'ya', 'llevan', 'calificaron', 'levantaban', 'en', 'han', 'están', 'mantiene', 'les', 'anticipa', 'ver', 'sea', 'abrimos', 'vivimos', 'más'}
 
