@@ -47,11 +47,13 @@ Se comenzó probando de a 10 clusters y así se fué avanzando hasta llegar a 40
 
 # Output
 A continuación presentaré algunos de los clusters formados.
+
 *Nota: El input es UNA PARTE del corpus, no es el corpus completo.*
 
 >{'Clara', 'Coordinadora', 'Alejandro', 'Gobierno', 'María', 'Martínez', 'Nicolás', 'Somos', 'Ipem', 'Ministerio', 'Ateneo', 'Isabel', 'Villa', 'Fábrica', 'Deán', 'Rodolfo', 'Cornú', 'Pedro', 'Manuel', 'Jerónimo'}
 
 En este cluster podemos observar que se agrupan __entidades__ (nombres propios).
+
 *Nota: Hay varias entidades que quedan fuera del cluster*.
 
 >{'fue', 'se', 'molestan', 'vino', 'sostiene', 'ya', 'llevan', 'calificaron', 'levantaban', 'en', 'han', 'están', 'mantiene', 'les', 'anticipa', 'ver', 'sea', 'abrimos', 'vivimos', 'más'}
