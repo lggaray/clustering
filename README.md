@@ -20,20 +20,20 @@ Los tipos de features utilizados fueron:
     - Palabra siguiente
     - Tag de la palabra siguiente
     
-    Para lematizar, se utilizo [este](http://www.lexiconista.com/datasets/lemmatization/) diccionario, extraído de la pagina __lexiconista__.
-    Para el POS tag se utilizó [StanfordPOSTagger](http://www.nltk.org/_modules/nltk/tag/stanford.html) de la librería __nltk__.
-    Para obtener tag y palabra anterior/siguiente se implementó una función propia.
+Para lematizar, se utilizo [este](http://www.lexiconista.com/datasets/lemmatization/) diccionario, extraído de la pagina __lexiconista__.
+Para el POS tag se utilizó [StanfordPOSTagger](http://www.nltk.org/_modules/nltk/tag/stanford.html) de la librería __nltk__.
+Para obtener tag y palabra anterior/siguiente se implementó una función propia.
     
-    Luego de obtener esta información, se procede al armado de una lista de diccionarios, donde cada uno correspondia a los features de determinada palabra.
+Luego de obtener esta información, se procede al armado de una lista de diccionarios, donde cada uno correspondia a los features de determinada palabra.
 
 
 
 3) *Vectorización:*
 
-    Para realizar esta tarea, en un primer momento se utilizó __word2vect__ de la libreria [gensim](https://radimrehurek.com/gensim/models/word2vec.html).
-    Pero luego de un par de intentos de clustering, se podía observar que varios clusters carecían de sentido y los *hiperparámetros* que se podían modificar no impactaban mucho en el resultado final. Esto se debe, principalmente, a que el mismo algoritmo, de alguna forma, seleccionaba los features, es decir, no se tenía control sobre ellos.
+Para realizar esta tarea, en un primer momento se utilizó __word2vect__ de la libreria [gensim](https://radimrehurek.com/gensim/models/word2vec.html).
+Pero luego de un par de intentos de clustering, se podía observar que varios clusters carecían de sentido y los *hiperparámetros* que se podían modificar no impactaban mucho en el resultado final. Esto se debe, principalmente, a que el mismo algoritmo, de alguna forma, seleccionaba los features, es decir, no se tenía control sobre ellos.
     
-    Teniendo en cuenta esto, se procedió a la utilización de la función __DictVectorizer__ de la libreria [sklearn](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html), en la cual es posible poder elegir los tipos de features que queremos que se tengan en cuenta.
+Teniendo en cuenta esto, se procedió a la utilización de la función __DictVectorizer__ de la libreria [sklearn](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html), en la cual es posible poder elegir los tipos de features que queremos que se tengan en cuenta.
     
 4) *Reducción de dimensionalidad:*
 
