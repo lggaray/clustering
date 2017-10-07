@@ -1,0 +1,7 @@
+# Guia para explorar los clusters
+
+Correr el siguiente código:
+
+>import pickle
+>with open("nombre_del_archivo", "rb") as f:
+>  clusters = pickle.load(f)
