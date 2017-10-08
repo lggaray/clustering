@@ -84,6 +84,7 @@ Algunos de los clusters obtenidos usando como clase el PoS tag de la palabra:
 >{'Bachelor', 'north', 'Art', 'Hour', 'Way', 'east', 'empty', 'implementation', 'west', 'end', 'Because', 'south', 'Sephardim', 'Proceedings', 'Old', 'Journal'}
 
 -   Podemos obvservar que en estos clusters los grupos son formados por una palabra, distintas conjugaciones de la misma y sinónimos.
+
 *Nota*: Teniendo en cuenta los resultados obtenidos, podemos deducir que nuestro corpus quedó chico para este método, ya que quedaron clusters chicos, de la forma que acabamos de mencionar, y el resto son clusters más grandes donde el agrupamiento parece no tener sentido. Es decir, necesitamos un corpus significativamente más grande para poder formar más clusters con sentido. 
 
 Primer comentario a tener en cuenta es que para el método que utiliza como clase el sentido, se utiliza una *check_list* (lista utilizada para recuperar las palabras despues de ser llevadas a un espacio vectorial) con los lemas de las palabras, mientras que en el método que utiliza como clase el PartofSpeech tagging (PoS tagging), ésta *check_list* esta compuesta por las palabras en si (no los lemas).
@@ -94,4 +95,4 @@ En segundo lugar, podemos observar (teniendo en cuenta lo dicho anteriormente) q
 * Si lo que buscamos es un __agrupamiento morfosintáctico__, entonces deberiamos utilizar como clase el __sentido de la palabra__.
 * Si lo que buscamos es un __agrupamiento semántico__, entonces deberíamos utilizar como clase el __PartofSpeech tagging__.
 
-Finalmente, abstrayendonos de los corpus utilizados, tanto para el *método supervisado* como para el *no supervisado*, podemos concluir en que éste último es más general, es decir, más útil para la exploración de datos, ya que, como vimos en el práctico 1, podemos obtener clusters tanto morfosintácticos como semánticos (siempre y cuando utilicemos como check_list las palabras y no el lema).Por otro lado, el *método supervisado* es más específico, es decir, podemos elegir la clase de acuerdo a nuestra necesidad, lo cuál tiene sentido ya que tenemos un resultado al cual queremos llegar y/o comparar.
+Finalmente, abstrayendonos de los corpus utilizados, tanto para el *método supervisado* como para el *no supervisado*, podemos concluir en que éste último es más general, es decir, más útil para la exploración de datos, ya que, como vimos en el práctico 1, podemos obtener clusters tanto morfosintácticos como semánticos (siempre y cuando utilicemos como check_list las palabras y no el lema). Por otro lado, el *método supervisado* es más específico, es decir, podemos elegir la clase de acuerdo a nuestra necesidad, lo cuál tiene sentido ya que tenemos un resultado al cual queremos llegar y/o comparar.
