@@ -7,18 +7,26 @@ Para esta tarea se utilizó el [wikicorpus](https://cs.famaf.unc.edu.ar/~ccardel
 
 ### Proceso
 * Sampleo del corpus:
+
 Para realizar el sampleo aleatorio siemplemente se tomaron las primeras 150k lineas del archivo *wikicorpus_01* (limitado por la capacidad de la máquina). El archivo estaba dividido por artículos, y a su vez también dividido por palabras. Cada artículo correspondía a una sección diferente a la del artículo anterior, por esta razón solo bastó tomar todas las lineas posibles, ya que el sampleo sería "aleatorio".
 * Descripción del corpus anotado:
+
 Cada linea del wikicorpus es del estilo
     >Juega jugar VMM02S0 00727813
 
     Definido de la siguiente manera:
+
     1.Palabra
+
     2.Lema
+
     3.Pos tag
+
     4.Synset
+
     
 * Descripción del corpus NO anotado:
+
 Como corpus no anotado se utilizó el mismo del práctico uno, es decir, articulos del diaron *La Voz del Interior*.
 La organización de este archivo es simple: cada artículo era separado por un guión medio(-), luego, la primera linea anunciaba el título del artículo, mientras que la segunda era el artículo en si, el cual se encontraba descripto en solo una linea.
 
@@ -34,12 +42,15 @@ La organización de este archivo es simple: cada artículo era separado por un g
     - __Islice__: Utilizada para tomar las primeras *N* lineas del archivo.
     - __Spacy__: Libreria MUY útil para *PLN*. Utilizada por el método *NO supervisado* para obtener tags, Pos tags y triplas de dependencia.
 * Técnica supervisada de feature selection:
+
 Como bien se mencionó antes, utilizamos una de las funciones de __sklearn__, [SelectKBest](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html#sklearn.feature_selection.SelectKBest).
 Como función de clasificación se eligió [chi2](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.chi2.html#sklearn.feature_selection.chi2). Y como cantidad de features(*K*) se eligió el 70% de las features totales.
 * Técnica no supervisada de feature selection:
+
 Como se describió en el informe del práctico 1, para feature selection no supervisada se utilizó tambien una función de __sklearn__, en particular [TruncatedSVD](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html) (aka LSA). Como cantidad de dimensiones se comenzó provando con 100 y se llego hasta 500. A modo prueba y error, se llegó a la conclusión que 300 dimensiones devolvía el mejor resultado.
 
 * Discusión cualitativa:
+
 Alguno de los clusters obtenidos usando como clase el sentido de la palabra:
 >{'granada', 'manchester', 'céspedes', 'parís', 'downingtown', 'cayo', 'putumayo', 'tlalpan', 'tlaltizapán', 'stuttgart', 'utc', 'viena', 'manila', 'vancouver', 'jacksonville', 'alabama', 'bacadéhuachi', 'haarlem', 'newcastle', 'glasgow', 'copenhague', 'gama', 'reinosa', 'álamos', 'zacatecas', 'bethesda', 'chicago', 'leeds', 'bristol', 'asturias', 'ibanez', 'londres', 'hamburgo', 'berlin', 'palmyra', 'estocolmo', 'oxford', 'envigado'}
 
